@@ -1,0 +1,89 @@
+✅ Problem 1: 
+🔸 Pseudocode:
+pgsql
+Copy
+Edit
+Algorithm SumOfDistinctElements
+Input: Array A[1..n], Array B[1..m]
+Output: Sum of distinct elements from A and B
+
+1. Set sum ← 0
+
+2. For i ← 1 to n do
+      Set found ← false
+      For j ← 1 to m do
+          If A[i] = B[j] then
+              Set found ← true
+              Break
+      End For
+      If found = false then
+          sum ← sum + A[i]
+End For
+
+3. For j ← 1 to m do
+      Set found ← false
+      For i ← 1 to n do
+          If B[j] = A[i] then
+              Set found ← true
+              Break
+      End For
+      If found = false then
+          sum ← sum + B[j]
+End For
+
+4. Return sum
+✅ Problem 2: 
+🔹 Part A: Procedure to compute dot product
+pgsql
+Copy
+Edit
+Procedure Dot_Product(v1[1..n], v2[1..n], Output ps)
+Begin
+    ps ← 0
+    For i ← 1 to n do
+        ps ← ps + (v1[i] * v2[i])
+    End For
+End Procedure
+🔹 Part B: Check if n pairs of vectors are orthogonal (using procedure)
+vbnet
+Copy
+Edit
+Algorithm Check_Orthogonality
+Input: List of n pairs of vectors (v1, v2)
+Output: For each pair, print if orthogonal or not
+
+1. For k ← 1 to n do
+      Let (v1, v2) ← k-th pair
+      Call Dot_Product(v1, v2, ps)
+      If ps = 0 then
+          Print "Pair", k, "is Orthogonal"
+      Else
+          Print "Pair", k, "is Not Orthogonal"
+End For
+🔹 Part C: If using a function instead of procedure
+mathematica
+Copy
+Edit
+Function Dot_Product(v1[1..n], v2[1..n]) → Integer
+Begin
+    ps ← 0
+    For i ← 1 to n do
+        ps ← ps + (v1[i] * v2[i])
+    End For
+    Return ps
+End Function
+mathematica
+Copy
+Edit
+Algorithm Check_Orthogonality_With_Function
+Input: List of n pairs of vectors (v1, v2)
+Output: For each pair, print if orthogonal or not
+
+1. For k ← 1 to n do
+      Let (v1, v2) ← k-th pair
+      ps ← Dot_Product(v1, v2)
+      If ps = 0 then
+          Print "Pair", k, "is Orthogonal"
+      Else
+          Print "Pair", k, "is Not Orthogonal"
+End For
